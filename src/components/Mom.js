@@ -1,5 +1,6 @@
 import React, {component} from 'react'
-import { Component } from 'react/cjs/react.production.min';
+import { Component } from 'react/cjs/react.production.min'
+import Kid from './Kid'
 
 class Mom extends Component{
     state={
@@ -13,6 +14,12 @@ class Mom extends Component{
         })
     }
 
+    answerKid = () =>{
+        this.setState({
+            kidMsg : "D'accord Maman"
+        })
+    }
+
     render() {
         return(
             <div>
@@ -20,6 +27,9 @@ class Mom extends Component{
                 <button onClick={this.orderMom}>Ordre de la mère</button>
                 <p>{this.state.momMsg}</p>
                 <hr/>
+
+                <Kid name="Bernie" kidAnswer={this.answerKid} leState={this.state}/>
+
             </div>
         )
     }
